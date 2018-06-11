@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.banque.org</groupId>
+  <artifactId>Banque</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  	<dependencies>
+		<!-- Etape 1 : hibernate-entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.2.17.Final</version>
+		</dependency>
+
+		<!-- Etape 2 : Mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.16</version>
+		</dependency>
+	</dependencies>
+
+		<!-- Plugin Exec (permet de faire un mvn exec:java pour lancer l'appli) -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>dao.DemoBanque</mainClass>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>
